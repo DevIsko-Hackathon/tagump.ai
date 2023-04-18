@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "602561978471",
+    "project_id": "tagumpai-2bad6",
+    "storage_bucket": "tagumpai-2bad6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602561978471:android:aad0a44913fb061717f4c2",
+        "android_client_info": {
+          "package_name": "com.example.tagumpai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602561978471-mavd7q7ng4p1tndlcks9ajf4akdjouqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tagumpai",
+            "certificate_hash": "024fc5f8bb12afb16731f67185d8e0f4805daf7f"
+          }
+        },
+        {
+          "client_id": "602561978471-klnc851fevt7ekfma7pq913n5n7vfrhf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6831xE-YL9giNHBVsbxhTrPTj4tv-yBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602561978471-klnc851fevt7ekfma7pq913n5n7vfrhf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
