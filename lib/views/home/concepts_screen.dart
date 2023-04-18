@@ -19,6 +19,8 @@ class ConceptsScreen extends StatefulWidget {
 
 class _ConceptsScreenState extends State<ConceptsScreen> {
   var response;
+  bool isFinish = false;
+  dynamic? values;
 
   @override
   void initState() {
@@ -135,6 +137,8 @@ class _ConceptsScreenState extends State<ConceptsScreen> {
                         final result = response["result"]["syllabus"];
                         int length = index;
                         int subtitle = result[index].length;
+                        List<bool> _isCheckedList =
+                            List.generate(subtitle, (index) => false);
                         return Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20.0, vertical: 5),
@@ -169,23 +173,39 @@ class _ConceptsScreenState extends State<ConceptsScreen> {
                                   height: 10,
                                 ),
                                 SizedBox(
-                                  height: 200,
+                                  height: 190,
                                   child: ListView.builder(
                                       itemCount: subtitle,
                                       itemBuilder: (context, index) {
-                                        return Container(
-                                          margin: EdgeInsets.only(bottom: 10),
-                                          padding: EdgeInsets.all(20),
-                                          decoration: BoxDecoration(
-                                            color: tBlueColor,
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                          ),
-                                          child: TextWidget(
-                                            label:
-                                                "${result[length][index + 1]}",
-                                            color: Colors.white,
-                                            fontSize: 10,
+                                        return SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: [
+                                              Checkbox(
+                                                  value: _isCheckedList[index],
+                                                  onChanged: (bool? value) {
+                                                    setState(() {
+                                                      _isCheckedList[index] =
+                                                          value ?? false;
+                                                    });
+                                                  }),
+                                              Container(
+                                                margin:
+                                                    EdgeInsets.only(bottom: 10),
+                                                padding: EdgeInsets.all(20),
+                                                decoration: BoxDecoration(
+                                                  color: tBlueColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: TextWidget(
+                                                  label:
+                                                      "${result[length][index + 1]}",
+                                                  color: Colors.white,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         );
                                       }),

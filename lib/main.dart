@@ -8,7 +8,6 @@ import 'package:tagumpai/provider/api_provider.dart';
 import 'package:tagumpai/provider/user_provider.dart';
 import 'package:tagumpai/views/auth/wrapper.dart';
 
-import 'package:tagumpai/views/home/home_page.dart';
 
 import 'package:provider/provider.dart';
 

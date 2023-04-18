@@ -69,29 +69,29 @@ class _TargetCompanyScreenState extends State<TargetCompanyScreen> {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 4,
-                            child: Divider(
-                              color: tBlueColor,
-                              thickness: 3,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 4,
+                              child: Divider(
+                                color: tBlueColor,
+                                thickness: 3,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Divider(
-                              color: tBlueColor,
+                            Expanded(
+                              child: Divider(
+                                color: tBlueColor,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 100,
-                      ),
-                      SingleChildScrollView(
-                        child: Column(
+                          ],
+                        ),
+                        SizedBox(
+                          height: 100,
+                        ),
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -145,8 +145,8 @@ class _TargetCompanyScreenState extends State<TargetCompanyScreen> {
                             )
                           ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

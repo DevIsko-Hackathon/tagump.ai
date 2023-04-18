@@ -12,10 +12,6 @@ class ChatMessageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatMessage _chatMessage = ChatMessage(
-      text: "Hi",
-      sender: "1",
-    );
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
@@ -31,6 +27,7 @@ class ChatMessageWidget extends StatelessWidget {
             width: 5,
           ),
           Container(
+            width: 300,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -45,7 +42,8 @@ class ChatMessageWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextWidget(
-                    label: chatMessage.text,
+                    label:
+                        "Describe a time when you had to work with a team to solve a complex problem",
                     color: Colors.black,
                   ),
                 ],
