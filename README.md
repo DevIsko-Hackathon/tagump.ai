@@ -18,9 +18,17 @@ Tagump.ai is an AI-powered job readiness application that provides users with a 
 
 ## Tech Stack
 
-**Client:** <img src="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white" height="15"></img>
+<div style = "display: inline-block">
+  <b>Client: </b> 
+  <img src="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white" height = "13"> </img>
+  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" height = "13"></img>
+</div>
 
-**Server:** Node
+<div style = "display: inline-block">
+  <b>Server: </b> 
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" height = "13"> </img>
+  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" height = "13"></img>
+</div>
 
 
 ## Run Locally and Usage
