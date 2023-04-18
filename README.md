@@ -18,7 +18,7 @@ Many job seekers such as fresh graduates struggle to become job-ready due to the
 
 ## 👷 Community 
 
-- "Early Career Professionals"
+- Early Career Professionals
   - individuals that are often recent graudates, working students, or those who have just started their careers  and are looking for guidance and support to advance in their chosen fields
 
 ## ✅ Proposed Solution 
@@ -78,7 +78,16 @@ Install dependencies
   npm install
 ```
 
-**To run the app, follow these steps:**
+To run the app, follow these steps:
+
+**OpenAI API**
+
+Set up the OpenAI API by following these steps:
+1. Go to the <u><a href="https://platform.openai.com/signup/">OpenAI API</a></u> page and sign up for an account if you don't have one yet.
+2. Once you have an account, create an API key by going to the <u><a href="https://platform.openai.com/account/api-keys">API Keys</a></u> page.
+3. Copy the API key and paste it into the '***API_KEY***' field in the '***constants.dart***' file located in the '***lib***' directory.
+
+**Flutter**
 
 1. Make sure you have Flutter installed on your machine. If you don't have Flutter installed, you can follow the <u><a href = "https://docs.flutter.dev/get-started/install">official installation guide</a></u> or watch this <u><a href = "https://www.youtube.com/watch?v=HAPQ3oUGgnE">video tutorial</a></u> to install it.
 
@@ -89,6 +98,8 @@ Install dependencies
 4. Run '***flutter pub***' get to download the project dependencies.
 
 5. Finally, run '***flutter run***' to start the app.
+
+Note: Please make sure that your device is connected to the internet while using the app, as some of its features require an active internet connection.
 
 ## 🚀 Demo
 
