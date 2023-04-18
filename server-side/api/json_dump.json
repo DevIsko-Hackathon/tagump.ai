@@ -1,0 +1,49 @@
+{
+    "userid" : 1234,
+    "topics" : [
+        {
+            "id" : 1234,
+            "topic_name" : "Topic 1",
+            "completed" : true,
+            "subtopics" : [
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 1",
+                    "completed" : true
+                },
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 2",
+                    "completed" : false
+                },
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 3",
+                    "completed" : false
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "topic_name" : "Topic 2",
+            "completed" : true,
+            "subtopics" : [
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 1",
+                    "completed" : false
+                },
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 2",
+                    "completed" : true
+                },
+                {
+                    "id": 1234,
+                    "subtopic_name" : "Subtopic 3",
+                    "completed" : true
+                }
+            ]
+        }
+    ]
+}
