@@ -18,6 +18,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _chatController = TextEditingController();
   final List<ChatMessageWidget> _messages = [];
+  String message = "";
 
   void _sendMessage() {
     ChatMessageWidget _message = ChatMessageWidget(
@@ -88,6 +89,9 @@ class _ChatScreenState extends State<ChatScreen> {
               indent: 30,
               endIndent: 30,
             ),
+            Container(
+              height: 60,
+            ),
             Flexible(
               child: ListView.builder(
                 itemCount: _messages.length,
@@ -117,7 +121,14 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                       child: TextField(
                         controller: _chatController,
-                        onSubmitted: (value) => _sendMessage(),
+                        onChanged: (value) {
+                          setState(() {
+                            message = value;
+                          });
+                        },
+                        textCapitalization: TextCapitalization.sentences,
+                        autocorrect: true,
+                        enableSuggestions: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),

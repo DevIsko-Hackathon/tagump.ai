@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tagumpai/constants/global_variables.dart';
+import 'package:tagumpai/provider/user_provider.dart';
+import 'package:tagumpai/views/chat/chat_screen.dart';
 import 'package:tagumpai/widgets/button_widget.dart';
 import 'package:tagumpai/widgets/text_widget.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -19,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context, listen: false).getUser;
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -53,11 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    TextWidget(
-                      label: "Greetings, Hannah!",
-                      fontSize: 25,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                    Consumer<UserProvider>(
+                      builder: (context, value, child) => TextWidget(
+                        label: "Greetings, ${user.name}!",
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
                     ),
                     TextWidget(
                       label: "You're here to become a UX/UI Designer!",
@@ -75,7 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   ProgressIndicator(),
                   SizedBox(height: 20),
-                  InterviewCard(),
                   SizedBox(
                     height: 20,
                   ),
@@ -164,6 +169,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InterviewCard(),
                 ],
               ),
             ),
@@ -294,7 +303,8 @@ class InterviewCard extends StatelessWidget {
                 ButtonWidget(
                   label: "Click here",
                   backgroundColor: tBlueColor,
-                  onPressed: () {},
+                  onPressed: () =>
+                      Navigator.pushNamed(context, ChatScreen.route),
                 ),
               ],
             ),

@@ -36,10 +36,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => FirestoreServices(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => UserProvider(),
+          create: (_) => UserProvider(),
         ),
       ],
       child: MaterialApp(

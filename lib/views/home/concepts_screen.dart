@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../../constants/global_variables.dart';
@@ -10,6 +11,10 @@ class ConceptsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime date = DateTime.now();
+    final weekday = DateFormat("EEEE").format(date);
+    final month = DateFormat("LLLL").format(date);
+    final day = DateFormat("d").format(date);
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +43,7 @@ class ConceptsScreen extends StatelessWidget {
                       Expanded(
                         child: ListTile(
                           title: TextWidget(
-                            label: "12 Dec, Monday",
+                            label: "$day $month, $weekday",
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.w700,

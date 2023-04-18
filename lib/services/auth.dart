@@ -21,7 +21,9 @@ class AuthServices {
   }
 
   // sign up with email and password
-  Future signUp(String email, String password, String name, context) async {
+  Future<String> signUp(
+      String email, String password, String name, context) async {
+    String res = "Some error occurred";
     try {
       UserCredential _cred = await _auth.createUserWithEmailAndPassword(
         email: email,
@@ -33,58 +35,44 @@ class AuthServices {
         email: email,
         password: password,
         id: _cred.user!.uid,
+        picture: null,
       );
 
       // store to firestore after creating
       _db.collection("users").doc(_cred.user!.uid).set(_user.toJson());
 
-      final snackBar = SnackBar(
-        duration: Duration(seconds: 2),
-        content: Text("Created account succesfully!"),
-        backgroundColor: Colors.green,
-      );
-
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
       _auth.signInWithEmailAndPassword(email: email, password: password);
+
+      res = "success";
     } on FirebaseAuthException catch (e) {
-      final snackBar = SnackBar(
-        duration: Duration(seconds: 2),
-        content: Text("{$e.code}"),
-        backgroundColor: Colors.red,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      res = e.toString();
       print("Error: $e");
     }
+
+    return res;
   }
 
   // sign in with email and password
-  Future signIn(String email, String password, context) async {
+  Future<String> signIn(String email, String password, context) async {
+    String res = "Some error occurred";
     try {
       UserCredential _cred = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      final snackBar = SnackBar(
-        duration: Duration(seconds: 2),
-        content: Text("Signed in succesfully!"),
-        backgroundColor: Colors.green,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      res = "success";
     } catch (e) {
-      print("Error: $e");
-      final snackBar = SnackBar(
-        duration: Duration(seconds: 2),
-        content: Text("Invalid Email or Password!"),
-        backgroundColor: Colors.red,
-      );
-
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      res = e.toString();
+      print("Error: $res");
     }
+
+    return res;
   }
 
   // sign in google
-  Future googleLogin() async {
+  Future<String> googleLogin() async {
+    String res = "Some error occured";
     try {
       // interactive sign in process
       final googleUser = await googleSignin.signIn();
@@ -99,21 +87,18 @@ class AuthServices {
       );
 
       // sign in
-      return await _auth.signInWithCredential(cred);
+      await _auth.signInWithCredential(cred);
+      res = "success";
     } catch (e) {
-      print("Error: $e");
+      res = e.toString();
+      print("Error: $res");
     }
+
+    return res;
   }
 
   // sign out
   Future signOut(context) async {
     await _auth.signOut();
-
-    final snackBar = SnackBar(
-      duration: Duration(seconds: 2),
-      content: Text("Logged out succesfully!"),
-      backgroundColor: Colors.green,
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

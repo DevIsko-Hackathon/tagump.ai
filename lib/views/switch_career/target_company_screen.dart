@@ -138,7 +138,6 @@ class _TargetCompanyScreenState extends State<TargetCompanyScreen> {
                               label: "Next",
                               backgroundColor: tBlueColor,
                               onPressed: () async {
-                                user.hasPersonalized();
                                 setState(() {
                                   isFinish = true;
                                 });

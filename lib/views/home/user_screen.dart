@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tagumpai/provider/user_provider.dart';
 import 'package:tagumpai/services/auth.dart';
 import 'package:tagumpai/views/auth/auth_screen.dart';
 import 'package:tagumpai/views/auth/wrapper.dart';
@@ -15,6 +16,7 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).getUser;
     return SafeArea(
       child: Container(
         color: Color(0xFFE5ECF6),
@@ -48,13 +50,13 @@ class UserScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextWidget(
-                            label: "Hannah Banana",
+                            label: "${user.name}",
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
                           ),
                           TextWidget(
-                            label: "youremail@email.com",
+                            label: "${user.email}",
                             color: Colors.white,
                           ),
                           SizedBox(

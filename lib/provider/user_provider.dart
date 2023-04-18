@@ -16,11 +16,4 @@ class UserProvider extends ChangeNotifier {
     _user = user;
     notifyListeners();
   }
-
-  void hasPersonalized() async {
-    await _db.collection("users").doc(_user!.id).update({
-      "hasPersonalized": true,
-    });
-    notifyListeners();
-  }
 }

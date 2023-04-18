@@ -1,10 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/views/home/home_page.dart';
 import 'package:tagumpai/widgets/text_widget.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+
+import '../provider/user_provider.dart';
 
 class PersonalizingLoading extends StatefulWidget {
   const PersonalizingLoading({super.key});
@@ -21,6 +24,13 @@ class _PersonalizingLoadingState extends State<PersonalizingLoading> {
     Timer(Duration(seconds: 3), () {
       Navigator.pushNamed(context, HomePage.route);
     });
+    addData();
+  }
+
+  addData() async {
+    UserProvider _userProvider =
+        Provider.of<UserProvider>(context, listen: false);
+    await _userProvider.refreshUser();
   }
 
   @override

@@ -53,6 +53,7 @@ dependencies:
   im_stepper: ^1.0.1+1
   image_picker: ^0.8.7+3
   firebase_storage: ^11.1.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

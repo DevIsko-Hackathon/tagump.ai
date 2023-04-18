@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/views/home/concepts_screen.dart';
 import 'package:tagumpai/views/home/home_screen.dart';
@@ -7,6 +8,8 @@ import 'package:tagumpai/views/home/insurance_screen.dart';
 import 'package:tagumpai/views/home/job_screen.dart';
 import 'package:tagumpai/views/home/user_screen.dart';
 import 'package:tagumpai/widgets/text_widget.dart';
+
+import '../../provider/user_provider.dart';
 
 class HomePage extends StatefulWidget {
   static String route = "homePage";
@@ -28,6 +31,18 @@ class _HomePageState extends State<HomePage> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    addData();
+  }
+
+  addData() async {
+    UserProvider _userProvider =
+        Provider.of<UserProvider>(context, listen: false);
+    await _userProvider.refreshUser();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
@@ -38,10 +53,8 @@ class _HomePageState extends State<HomePage> {
           width: MediaQuery.of(context).size.width,
           child: Stack(
             children: [
-              Positioned(
-                child: Divider(
-                  color: Colors.black,
-                ),
+              Divider(
+                color: Colors.black,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

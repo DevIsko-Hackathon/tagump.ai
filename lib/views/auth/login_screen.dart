@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/services/auth.dart';
+import 'package:tagumpai/services/show_snackbar.dart';
 import 'package:tagumpai/views/home/home_page.dart';
 import 'package:tagumpai/widgets/button_widget.dart';
 import 'package:tagumpai/widgets/form_widget.dart';
@@ -43,12 +44,19 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {
         _isLoading = true;
       });
-      await AuthServices().signIn(
+
+      String res = await AuthServices().signIn(
         _emailController.text.trim(),
         _passwordController.text.trim(),
         context,
       );
-      Navigator.pushReplacementNamed(context, HomePage.route);
+
+      if (res == "success") {
+        showSnackBar("Logged in succesfully!", context, true);
+        Navigator.pushReplacementNamed(context, HomePage.route);
+      } else {
+        showSnackBar(res, context, false);
+      }
       setState(() {
         _isLoading = false;
       });

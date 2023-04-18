@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/services/auth.dart';
+import 'package:tagumpai/services/show_snackbar.dart';
 import 'package:tagumpai/views/personalized/personalize_screen.dart';
 import 'package:tagumpai/widgets/button_widget.dart';
 import 'package:tagumpai/widgets/form_widget.dart';
@@ -31,13 +32,20 @@ class _SignupScreenState extends State<SignupScreen> {
       setState(() {
         _isLoading = true;
       });
-      await AuthServices().signUp(
-          _emailController.text.trim(),
-          _passwordController.text.trim(),
-          _nameController.text.trim(),
-          context);
+      String res = await AuthServices().signUp(
+        _emailController.text.trim(),
+        _passwordController.text.trim(),
+        _nameController.text.trim(),
+        context,
+      );
 
-      Navigator.pushReplacementNamed(context, PersonalizeScreen.route);
+      if (res == "success") {
+        showSnackBar("Created account succesfully!", context, true);
+
+        Navigator.pushNamed(context, PersonalizeScreen.route);
+      } else {
+        showSnackBar(res, context, false);
+      }
       setState(() {
         _isLoading = false;
       });
