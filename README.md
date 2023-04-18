@@ -18,9 +18,8 @@ Many job seekers such as fresh graduates struggle to become job-ready due to the
 
 ## 👷 Community 
 
-- Job Seekers
-- Career Shifters
-- Individuals who want to imporve their "job-readiness"
+- "Early Career Professionals"
+  - individuals that are often recent graudates, working students, or those who have just started their careers  and are looking for guidance and support to advance in their chosen fields
 
 ## ✅ Proposed Solution 
 
