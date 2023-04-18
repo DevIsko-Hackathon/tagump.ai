@@ -1,6 +1,6 @@
 # tagumpAI
 
-Tagump.ai is an AI-powered job readiness application that provides users with a customized syllabus based on their skills and desired job/industry. It also offers a mock interview feature to help users practice and prepare for job interviews. Additionally, the app recommends suitable companies and jobs for users to explore.
+TagumpAI is an AI-powered job readiness application that provides users with a customized syllabus based on their skills and desired job/industry. It also offers a mock interview feature to help users practice and prepare for job interviews. Additionally, the app recommends suitable companies and jobs for users to explore.
 
 ## 🗒️ Table of Contents
 - [Problem Statement](#problem-statement)
@@ -14,7 +14,7 @@ Tagump.ai is an AI-powered job readiness application that provides users with a 
 
 ## ❗ Problem Statement 
 
-Many job seekers such as fresh graduates struggle to become job-ready due to the lack of guidance and resources in preparing for their desired careers. As a result, they often struggle to find employment or end up in positions that are not aligned with their career goals. This leads to a high turnover rate and a workforce that is not fully utilized, ultimately contributing to the global issue of unemployment and underemployment. The app, Tagump.ai, aims to address this problem by providing personalized guidance to help job seekers become job-ready and find positions that are aligned with their career goals.
+Many job seekers such as fresh graduates struggle to become job-ready due to the lack of guidance and resources in preparing for their desired careers. As a result, they often struggle to find employment or end up in positions that are not aligned with their career goals. This leads to a high turnover rate and a workforce that is not fully utilized, ultimately contributing to the global issue of unemployment and underemployment. The app, tagumpAI, aims to address this problem by providing personalized guidance to help job seekers become job-ready and find positions that are aligned with their career goals.
 
 ## 👷 Community 
 
@@ -24,9 +24,9 @@ Many job seekers such as fresh graduates struggle to become job-ready due to the
 
 ## ✅ Proposed Solution 
 
-The problem of job seekers struggling to become job-ready due to the lack of guidance and resources in preparing for their desired careers can be addressed through the Tagump.ai app. The app provides personalized guidance to help job seekers become job-ready and find positions that are aligned with their career goals.
+The problem of job seekers struggling to become job-ready due to the lack of guidance and resources in preparing for their desired careers can be addressed through the tagumpAI app. The app provides personalized guidance to help job seekers become job-ready and find positions that are aligned with their career goals.
 
-By providing personalized guidance, simulated interview experiences, and job and company recommendations, the Tagump.ai app can help job seekers to become job-ready and find positions that are aligned with their career goals. This can ultimately contribute to reducing unemployment and underemployment rates and promote a more productive workforce.
+By providing personalized guidance, simulated interview experiences, and job and company recommendations, the tagumpAI app can help job seekers to become job-ready and find positions that are aligned with their career goals. This can ultimately contribute to reducing unemployment and underemployment rates and promote a more productive workforce.
 
 ## 🎯 UN SDG 
 
@@ -64,7 +64,7 @@ By providing personalized guidance, simulated interview experiences, and job and
 Clone the project
 
 ```bash
-  git clone https://github.com/DevIsko-Hackathon/tagump.ai.git
+  git clone https://github.com/DevIsko-Hackathon/tagumpAI.git
 ```
 
 Go to the project directory
