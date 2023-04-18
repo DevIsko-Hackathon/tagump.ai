@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tagumpai/constants/global_variables.dart';
+import 'package:tagumpai/views/first_job/first_job.dart';
+import 'package:tagumpai/views/just_exploring/just_exploring.dart';
 import 'package:tagumpai/views/personalized/preparing_screen.dart';
 import 'package:tagumpai/views/switch_career/previous_job_screen.dart';
 import 'package:tagumpai/widgets/button_widget.dart';
@@ -58,7 +60,10 @@ class AccomplishScreen extends StatelessWidget {
                       ),
                       AccomplishButton(
                         label: "Prepare for First Job",
-                        onPressed: () {},
+                        onPressed: () => Navigator.pushNamed(
+                          context,
+                          firstJobScreen.route,
+                        ),
                       ),
                       SizedBox(
                         height: 10,
@@ -75,7 +80,10 @@ class AccomplishScreen extends StatelessWidget {
                       ),
                       AccomplishButton(
                         label: "Just Exploring",
-                        onPressed: () {},
+                        onPressed: () => Navigator.pushNamed(
+                          context,
+                          JustExploringScreen.route,
+                        ),
                       ),
                     ],
                   ),

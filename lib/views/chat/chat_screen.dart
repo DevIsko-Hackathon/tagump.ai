@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/models/chat_message.dart';
+import 'package:tagumpai/models/syllabus.dart';
+import 'package:tagumpai/services/api.dart';
 import 'package:tagumpai/widgets/form_widget.dart';
 import 'package:tagumpai/widgets/text_widget.dart';
 
@@ -31,6 +33,12 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       _messages.insert(0, _message);
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override

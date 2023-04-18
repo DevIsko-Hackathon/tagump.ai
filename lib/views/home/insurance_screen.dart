@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tagumpai/provider/api_provider.dart';
 
 import '../../constants/global_variables.dart';
 import '../../widgets/text_widget.dart';
 
-class InsuranceScreen extends StatelessWidget {
+class InsuranceScreen extends StatefulWidget {
   static String route = "insuranceScreen";
   const InsuranceScreen({super.key});
+
+  @override
+  State<InsuranceScreen> createState() => _InsuranceScreenState();
+}
+
+class _InsuranceScreenState extends State<InsuranceScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<ApiProvider>(context, listen: false)
+          .fetchApi("insuranceList");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

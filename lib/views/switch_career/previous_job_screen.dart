@@ -19,6 +19,8 @@ class PreviousJobScreen extends StatefulWidget {
 
 class _PreviousJobScreenState extends State<PreviousJobScreen> {
   final TextEditingController _jobTitleController = TextEditingController();
+  final ValueNotifier<String?> _prevIndustry = ValueNotifier(null);
+  final ValueNotifier<String?> _skills = ValueNotifier(null);
 
   @override
   void dispose() {
@@ -93,6 +95,7 @@ class _PreviousJobScreenState extends State<PreviousJobScreen> {
                         "Marketing",
                         "Medicine",
                       ],
+                      valueNotifier: _prevIndustry,
                     ),
                     SizedBox(
                       height: 60,
@@ -121,6 +124,7 @@ class _PreviousJobScreenState extends State<PreviousJobScreen> {
                         "Marketing",
                         "Medicine",
                       ],
+                      valueNotifier: _skills,
                     ),
                     SizedBox(
                       height: 60,

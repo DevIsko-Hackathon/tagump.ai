@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/widgets/button_widget.dart';
 import 'package:tagumpai/widgets/card_widget.dart';
@@ -119,7 +120,7 @@ class Companies extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextWidget(
-                        label: "Not sue if this company is the one for you?",
+                        label: "Not sure if this company is the one for you?",
                       ),
                       SizedBox(
                         height: 10,

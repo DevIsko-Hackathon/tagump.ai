@@ -3,6 +3,7 @@ import 'package:tagumpai/views/auth/login_screen.dart';
 import 'package:tagumpai/views/auth/auth_screen.dart';
 import 'package:tagumpai/views/auth/signup_screen.dart';
 import 'package:tagumpai/views/chat/chat_screen.dart';
+import 'package:tagumpai/views/first_job/first_job.dart';
 import 'package:tagumpai/views/home/concepts_screen.dart';
 import 'package:tagumpai/views/home/home_page.dart';
 import 'package:tagumpai/views/home/insurance_screen.dart';
@@ -17,6 +18,7 @@ import 'package:tagumpai/views/switch_career/target_company_screen.dart';
 import 'package:tagumpai/views/welcome_screen.dart';
 
 import '../views/auth/wrapper.dart';
+import '../views/just_exploring/just_exploring.dart';
 import '../views/user_profile.dart/edit_profile.dart';
 
 getRoutes() {
@@ -39,5 +41,7 @@ getRoutes() {
     JobScreen.route: (context) => JobScreen(),
     EditProfile.route: (context) => EditProfile(),
     ChatScreen.route: (context) => ChatScreen(),
+    firstJobScreen.route: (context) => firstJobScreen(),
+    JustExploringScreen.route: (context) => JustExploringScreen(),
   };
 }

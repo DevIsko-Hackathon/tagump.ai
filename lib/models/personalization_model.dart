@@ -21,10 +21,10 @@ class Personalization {
 
   toJson() => {
         "prev_industry": prev_industry,
-        "prev_jobTitle": prev_industry,
-        "skills": prev_industry,
-        "pref_industry": prev_industry,
-        "job_title": prev_industry,
+        "prev_jobTitle": prev_jobTitle,
+        "skills": skills,
+        "pref_industry": pref_industry,
+        "job_title": job_title,
         "hasTarget": hasTarget,
         "targetCompany": targetCompany,
         "companyListing": companyListing,

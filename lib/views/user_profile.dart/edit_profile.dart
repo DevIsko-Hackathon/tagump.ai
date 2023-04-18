@@ -46,7 +46,7 @@ class _EditProfileState extends State<EditProfile> {
   }
 
   void updateProfile() async {
-    await StorageServices().uploadImagetoStorage("profilePics", _image!);
+    await StorageServices().uploadImagetoStorage("profilePics", _image!, false);
   }
 
   @override

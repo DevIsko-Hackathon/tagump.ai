@@ -18,6 +18,7 @@ class CurrentJobScreen extends StatefulWidget {
 
 class _CurrentJobScreenState extends State<CurrentJobScreen> {
   final TextEditingController _jobTitleController = TextEditingController();
+  final ValueNotifier<String?> _currentIndustry = ValueNotifier(null);
 
   @override
   void dispose() {
@@ -89,6 +90,7 @@ class _CurrentJobScreenState extends State<CurrentJobScreen> {
                           "Marketing",
                           "Medicine",
                         ],
+                        valueNotifier: _currentIndustry,
                       ),
                       SizedBox(
                         height: 60,

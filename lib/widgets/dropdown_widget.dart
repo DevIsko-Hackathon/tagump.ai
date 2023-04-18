@@ -4,12 +4,14 @@ import 'package:tagumpai/constants/global_variables.dart';
 import 'package:tagumpai/widgets/text_widget.dart';
 
 class DropdownWidget extends StatefulWidget {
+  final ValueNotifier<String?> valueNotifier;
   final List<String> item;
   final String label;
   const DropdownWidget({
     super.key,
     required this.item,
     required this.label,
+    required this.valueNotifier,
   });
 
   @override
@@ -42,6 +44,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
             setState(() {
               this.value = value;
             });
+            widget.valueNotifier.notifyListeners();
           },
         ),
       ),

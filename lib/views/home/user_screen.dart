@@ -20,113 +20,116 @@ class UserScreen extends StatelessWidget {
     return SafeArea(
       child: Container(
         color: Color(0xFFE5ECF6),
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                SizedBox(
-                  height: 300,
-                ),
-                Container(
-                  height: 180,
-                  decoration: BoxDecoration(
-                    color: tBlueColor,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 280,
+                  ),
+                  Container(
+                    height: 180,
+                    decoration: BoxDecoration(
+                      color: tBlueColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
+                      ),
                     ),
                   ),
-                ),
-                Positioned(
-                  top: 100,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(tUserBanner),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TextWidget(
-                            label: "${user.name}",
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                          ),
-                          TextWidget(
-                            label: "${user.email}",
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            width: 200,
-                            child: ListTile(
-                              contentPadding: EdgeInsets.zero,
-                              minLeadingWidth: 20,
-                              leading: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                child: Icon(
-                                  Icons.book_rounded,
-                                  color: tBlueColor,
+                  Positioned(
+                    top: 100,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(tUserBanner),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TextWidget(
+                              label: "${user.name}",
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                            TextWidget(
+                              label: "${user.email}",
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              width: 200,
+                              child: ListTile(
+                                contentPadding: EdgeInsets.zero,
+                                minLeadingWidth: 20,
+                                leading: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.book_rounded,
+                                    color: tBlueColor,
+                                  ),
+                                ),
+                                title: TextWidget(
+                                  label: "Target Job:",
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12,
+                                ),
+                                subtitle: TextWidget(
+                                  label: "UX/UX Designer",
+                                  fontSize: 12,
                                 ),
                               ),
-                              title: TextWidget(
-                                label: "Target Job:",
-                                fontWeight: FontWeight.w700,
-                                fontSize: 12,
-                              ),
-                              subtitle: TextWidget(
-                                label: "UX/UX Designer",
-                                fontSize: 12,
-                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            UserCard(
-              icon: Icons.people,
-              label: "Edit Profile",
-              onPressed: () => Navigator.pushNamed(context, EditProfile.route),
-            ),
-            UserCard(
-              icon: Icons.settings,
-              label: "My Skills",
-              onPressed: () {},
-            ),
-            UserCard(
-              icon: Icons.book_online_outlined,
-              label: "My Career Path",
-              onPressed: () {},
-            ),
-            UserCard(
-              icon: Icons.settings,
-              label: "Settings",
-              onPressed: () {},
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: ButtonWidget(
-                label: "Logout",
-                backgroundColor: tBlueColor,
-                onPressed: () async {
-                  await AuthServices().signOut(context);
-                  Navigator.pushNamed(context, AuthScreen.route);
-                },
+                ],
               ),
-            ),
-          ],
+              UserCard(
+                icon: Icons.people,
+                label: "Edit Profile",
+                onPressed: () =>
+                    Navigator.pushNamed(context, EditProfile.route),
+              ),
+              UserCard(
+                icon: Icons.settings,
+                label: "My Skills",
+                onPressed: () {},
+              ),
+              UserCard(
+                icon: Icons.book_online_outlined,
+                label: "My Career Path",
+                onPressed: () {},
+              ),
+              UserCard(
+                icon: Icons.settings,
+                label: "Settings",
+                onPressed: () {},
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: ButtonWidget(
+                  label: "Logout",
+                  backgroundColor: tBlueColor,
+                  onPressed: () async {
+                    await AuthServices().signOut(context);
+                    Navigator.pushNamed(context, AuthScreen.route);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
