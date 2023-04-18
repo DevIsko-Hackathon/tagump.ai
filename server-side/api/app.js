@@ -13,12 +13,8 @@ var firestore = admin.firestore()
 
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
-    apiKey : "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"
+    apiKey : process.env.OPENAI_API_KEY
 })
-// const CHOI_API_KEY = "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"
-// const SHEANE_API_KEY = "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"
-// const JACOB_API_KEY = "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"
-// const CHRIS_API_KEY = "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"
 
 const openai = new OpenAIApi(configuration)
 
