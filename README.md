@@ -10,7 +10,6 @@ TagumpAI is an AI-powered job readiness application that provides users with a c
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Usage](#usage)
-- [Demo](#demo)
 
 ## ❗ Problem Statement 
 
