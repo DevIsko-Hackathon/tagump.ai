@@ -22,23 +22,23 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextWidget(
-                  label: "Welcome!",
-                  fontSize: 32,
-                  color: tBlueColor,
-                  fontWeight: FontWeight.bold,
+                Align(
+                  alignment: Alignment.center,
+                  child: TextWidget(
+                    label: "tagumpAI!",
+                    fontSize: 32,
+                    color: tBlueColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                TextWidget(
-                  label: "We are so glad you're here!",
-                  fontWeight: FontWeight.w500,
-                  fontSize: 19,
-                  color: Colors.black,
-                ),
-                TextWidget(
-                  label: "Discover amazing shit here",
-                  fontWeight: FontWeight.w500,
-                  fontSize: 19,
-                  color: Colors.black,
+                Align(
+                  alignment: Alignment.center,
+                  child: TextWidget(
+                    label: "Magandang hanapbuhay,\nAsahan mo sa tagumpAI",
+                    fontWeight: FontWeight.w500,
+                    fontSize: 19,
+                    color: Colors.black,
+                  ),
                 ),
                 SizedBox(
                   height: 100,

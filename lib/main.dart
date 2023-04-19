@@ -8,8 +8,8 @@ import 'package:tagumpai/provider/api_provider.dart';
 import 'package:tagumpai/provider/user_provider.dart';
 import 'package:tagumpai/views/auth/wrapper.dart';
 
-
 import 'package:provider/provider.dart';
+import 'package:tagumpai/views/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Wrapper.route,
+        initialRoute: WelcomeScreen.route,
         routes: getRoutes(),
         theme: ThemeData(
           textTheme: GoogleFonts.poppinsTextTheme(),
