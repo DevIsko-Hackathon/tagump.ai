@@ -100,7 +100,3 @@ Set up the OpenAI API by following these steps:
 5. Finally, run '***flutter run***' to start the app.
 
 Note: Please make sure that your device is connected to the internet while using the app, as some of its features require an active internet connection.
-
-## 🚀 Demo
-
-Insert gif or link to demo
